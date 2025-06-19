@@ -24,9 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="flex flex-row justify-between p-6 m-6 items-center ring-2 ring-black/15 rounded-3xl inset-shadow-sm inset-shadow-black/50 ">
+          <div className="flex flex-row gap-4 items-center">
+            <h1 className="text-4xl text-shadow-md px-4">Killswitch</h1>
+          </div>
+          <div className="flex flex-row gap-4 items-center">
+            <button className="font-semibold bg-black text-white px-6 py-4 rounded-2xl hover:bg-black/50">Pricing</button>
+            <button className="font-semibold bg-black text-white px-6 py-4 rounded-2xl hover:bg-black/50">Request Demo</button>
+          </div>
+        </div>
         {children}
       </body>
     </html>
