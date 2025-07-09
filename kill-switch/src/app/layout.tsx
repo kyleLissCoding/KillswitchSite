@@ -24,16 +24,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="flex flex-row justify-between p-6 m-6 items-center ring-2 ring-black/15 rounded-3xl inset-shadow-sm inset-shadow-black/50 ">
-          <div className="flex flex-row gap-4 items-center">
-            <h1 className="text-4xl text-shadow-md px-4">Killswitch</h1>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <nav className="fixed top-0 left-0 right-0 z-50 p-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex justify-between items-center p-4 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/50 dark:border-slate-700/50 rounded-3xl shadow-xl shadow-slate-900/5 dark:shadow-black/20">
+              <div className="flex items-center">
+                <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
+                  Killswitch
+                </h1>
+              </div>
+              <div className="flex items-center gap-3">
+                <button className="group relative px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white rounded-2xl font-semibold text-sm transition-all duration-200 hover:scale-105 hover:bg-slate-200 dark:hover:bg-slate-700 hover:shadow-lg">
+                  <span className="relative z-10">Pricing</span>
+                </button>
+                <button className="group relative px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-slate-900/25 dark:hover:shadow-white/25">
+                  <span className="relative z-10">Request Demo</span>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-900 dark:from-slate-100 dark:to-white opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-row gap-4 items-center">
-            <button className="font-semibold bg-black text-white px-6 py-4 rounded-2xl hover:bg-black/50">Pricing</button>
-            <button className="font-semibold bg-black text-white px-6 py-4 rounded-2xl hover:bg-black/50">Request Demo</button>
-          </div>
-        </div>
+        </nav>
         {children}
       </body>
     </html>
